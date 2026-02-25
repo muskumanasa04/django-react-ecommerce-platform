@@ -1,0 +1,443 @@
+
+/* ---------- PRODUCT SECTION ---------- */
+
+/* ---------- HERO BANNER (Image Left, Text Right) ---------- */
+.hero-banner {
+  display: flex;
+  flex-direction: row-reverse; /* Flips the order: Image left, Content right */
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px 5%;
+  width: 100%;
+  min-height: 300px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* Aligns image to the left */
+}
+
+.hero-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+  padding-left: 40px;
+}
+
+.hero-content h1 { 
+  font-size: 1.8rem; 
+  margin-bottom: 10px; 
+}
+
+/* ---------- PRODUCT DISPLAY ---------- */
+.product-display {
+  padding: 20px;
+  background-color: #f1f3f6;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* 2 Rows x 5 Columns Grid */
+.product-grid {
+  display: grid;
+  /* Fixed 5 columns: each takes exactly 1/5th of the space */
+  grid-template-columns: repeat(5, 1fr); 
+  /* Limits to 2 rows if you have exactly 10 items */
+  grid-template-rows: repeat(2, auto); 
+  column-gap: 0; /* No space between columns */
+  row-gap: 25px; /* Space between the two rows */
+  justify-content: center;
+}
+
+/* ---------- SMALLER PRODUCT CARD ---------- */
+.product-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 12px; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+  /* Card width is handled by the grid 1fr, but we can set a max */
+  max-width: 100%; 
+  height: 320px; /* Fixed height for uniformity */
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 120px; /* Smaller image height */
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 0.9rem; /* Smaller text */
+  margin: 1px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #388e3c; /* Green price for a 'deal' look */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Button Grouping */
+.button-group {
+  margin-top: auto; /* Keeps buttons at the bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.product-card button {
+  font-size: 0.75rem; /* Smaller buttons */
+  padding: 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: none;
+}
+
+.view-description { background-color: #f0f0f0; }
+.add-to-cart { background-color: #fb641b; color: #fff; font-weight: bold; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .product-grid { grid-template-columns: repeat(3, 1fr); } /* 3 cols for tablets */
+}
+@media (max-width: 600px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); } /* 2 cols for mobile */
+  .hero-banner { flex-direction: column; text-align: center; }
+  .hero-content { padding-left: 0; margin-top: 20px; }
+}
+
+/* ---------- PRODUCT GRID ---------- */
+.product-grid {
+  display: grid;
+  /* Use '1fr' to make cards fill the entire width of the column */
+  grid-template-columns: repeat(5, 1fr); 
+  
+  /* Centers the entire grid container */
+  justify-content: center; 
+  
+  /* This specifically removes the space between columns */
+  column-gap: 15px; 
+  
+  /* Keeps the vertical spacing you wanted between rows */
+  row-gap: 30px; 
+  
+  width: 100%;
+  max-width: 1200px; /* Optional: keeps the grid from getting too wide */
+  margin: 0 auto;
+}
+
+/* ---------- PRODUCT CARD ---------- */
+.product-card {
+  background: #fff;
+  /* Add a border so you can see where one card ends and the next begins */
+  border: 1px solid #e0e0e0; 
+  
+  /* Remove any external margins that might be creating space */
+  margin: 5px; 
+  
+  /* Ensure the card stretches to fill the 0-gap column */
+  width: 100%; 
+  
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  box-sizing: border-box; /* Prevents padding from adding to width */
+}
+
+/* Optional: Slight hover effect to distinguish touching cards */
+.product-card:hover {
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-color: #2874f0;
+}
+
+
+
+/* ---------- HERO BANNER (Image Left, Matter Right) ---------- */
+.hero-banner {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px 5%;
+  border-bottom: 1px solid #eee;
+}
+
+.hero-image { flex: 1; }
+.hero-image img { max-width: 90%; border-radius: 8px; }
+
+.hero-content { flex: 1; padding-left: 40px; }
+.hero-content h1 { font-size: 2.5rem; margin-bottom: 15px; }
+
+/* ---------- GRID LOGIC (5 Columns, No Column Gap) ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 0;
+  row-gap: 40px; /* Space between rows only */
+  justify-content: center;
+}
+
+/* ---------- REMOVE CARD APPEARANCE ---------- */
+.product-card {
+  background: transparent;
+  border: none;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 { font-size: 0.9rem; font-weight: 500; margin: 5px 0; }
+.product-card p { font-weight: bold; color: #212121; margin-bottom: 10px; }
+
+/* ---------- MODAL / POPUP STYLES ---------- */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 700px;
+  padding: 40px;
+  border-radius: 12px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 2rem;
+  border: none; background: none;
+  cursor: pointer;
+}
+
+.modal-body { display: flex; gap: 30px; align-items: center; }
+.modal-body img { width: 250px; object-fit: contain; }
+.modal-info h2 { margin-bottom: 10px; }
+.modal-price { font-size: 1.5rem; color: #388e3c; font-weight: bold; margin-bottom: 15px; }
+.modal-desc { line-height: 1.6; color: #555; margin-bottom: 20px; }
+
+.add-to-cart-modal {
+  background: #fb641b;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* 5 Column Grid - No spacing between columns */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+/* Modal Overlay Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px; right: 15px;
+  background: none; border: none; font-size: 24px; cursor: pointer;
+}
+
+.modal-body { display: flex; gap: 20px; align-items: flex-start; }
+.modal-body img { width: 200px; object-fit: contain; }
+.modal-price { font-size: 20px; font-weight: bold; color: #388e3c; }
+
+
+/* ---------- MAIN LAYOUT ---------- */
+.home-layout {
+  display: flex;
+  background-color: #f1f3f6; /* Light grey background like Flipkart/Amazon */
+  min-height: 100vh;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+  width: 280px;
+  background: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+
+.sidebar li:hover, .sidebar li.active-li {
+  background: #f0f5ff;
+  color: #2874f0;
+  font-weight: 600;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.home-container {
+  flex: 1;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- HERO BANNER ---------- */
+.hero-banner {
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+  min-height: 350px;
+}
+
+.hero-image {
+  flex: 1.2;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Vertically centers the text matter */
+  justify-content: center;
+  padding: 40px;
+  background: #fff;
+}
+
+.hero-text-wrapper {
+  max-width: 400px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #212121;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.shop-now-btn {
+  background: #2874f0;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ---------- PRODUCT GRID ---------- */
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px 0;
+  padding-left: 5px;
+}
+
+.product-grid {
+  display: grid;
+  /* 5 columns exactly like your screenshot */
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 15px; /* Consistent spacing */
+}

@@ -1,0 +1,86 @@
+/* ---------- NAVBAR ---------- */
+.navbar {
+    width: 100vw;
+    background-color: #2874f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    color: white;
+}
+
+.navbar h2, .nav-logo h2 {
+    cursor: pointer;
+    color: #ffffff !important;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.nav-links li a {
+    color: #ffffff !important;
+    text-decoration: none;
+    display: inline-block;
+    font-weight:800px ;
+}
+
+.nav-links li a:hover {
+    color: #f39c12 !important;
+}
+
+.navbar button {
+    background: white;
+    color: #2874f0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-logo {
+    text-decoration: none;
+    color: #ffffff !important;
+}
+
+/* Container for the buttons */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Cart Button Styling */
+.cart-btn {
+    background-color: white; /* Distinct orange for the cart */
+    color: blue!important;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-btn:hover {
+    background-color: whitesmoke;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.logout-btn:hover {
+    background-color: whitesmoke;
+    color: #007bff !important;
+} 

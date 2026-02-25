@@ -1,0 +1,14 @@
+/* ---------- GLOBAL RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f1f3f6; /* Flipkart-style background */
+  font-family: Arial, sans-serif;
+}

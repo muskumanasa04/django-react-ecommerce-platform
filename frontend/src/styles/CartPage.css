@@ -1,0 +1,223 @@
+/* Cart Items */
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.quantity-controls button {
+    padding: 5px 12px;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+    cursor: pointer;
+}
+
+.quantity-controls span {
+    padding: 0 15px;
+    font-weight: 800px;
+}
+
+/* Forms and Sections */
+.cart-summary-section, .user-details-form, .payment-method-section {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+h3 { margin-top: 0; color: #333; }
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Payment Specifics */
+.radio-label {
+    display: block;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.payment-extra-input {
+    margin-top: 5px !important;
+    border-color: #007bff !important;
+    background-color: #f0f7ff;
+}
+
+.card-row {
+    display: flex;
+    gap: 10px;
+}
+
+.small { width: 50% !important; }
+
+/* Buttons */
+.pay-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pay-btn:hover { background-color: #218838; }
+
+/* Invoice Box */
+.invoice-box {
+    background: white;
+    border: 2px dashed #28a745;
+    padding: 30px;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+.invoice-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+/* Container and Layout */
+.cart-page-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Payment Success Headers */
+.invoice-section h2 {
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    animation: scaleUp 0.4s ease-out; /* Popup animation effect */
+}
+
+.invoice-section h3 {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* The Invoice Box (The form given after payment) */
+.invoice-box {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+    position: relative;
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Styling the labels and text inside the Invoice */
+.invoice-box p {
+    margin: 12px 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #f9f9f9;
+    padding-bottom: 8px;
+    color: #333;
+}
+
+.invoice-box strong {
+    color: black;
+    width: 150px;
+    display: inline-block;
+}
+
+/* Items List in Invoice */
+.invoice-box h4 {
+    margin-top: 25px;
+    color: #333;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+}
+
+.invoice-box div {
+    padding: 5px 0;
+    color: #666;
+    font-style: italic;
+}
+
+/* The Final Generate Invoice Button */
+.invoice-btn {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.invoice-btn:hover {
+    background-color: #0056b3;
+}
+.cart-page-container {
+    min-height: 70vh; /* Ensures the page content area is large even if empty */
+    padding-bottom: 50px; /* Gives some breathing room before the footer starts */
+}
+
+/* Animations */
+@keyframes scaleUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .invoice-box {
+        padding: 20px;
+    }
+    .invoice-box strong {
+        display: block;
+        width: 100%;
+        margin-bottom: 2px;
+    }
+}

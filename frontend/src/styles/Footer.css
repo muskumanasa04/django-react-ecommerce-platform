@@ -1,0 +1,93 @@
+/* ---------- FOOTER ---------- */
+.footer {
+    width: 100vw;
+    background-color: #212121;
+    color: white;
+    padding: 40px 5%;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3, .footer-column h4 {
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.footer-column li:hover {
+    color: #f39c12;
+}
+
+.footer-input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.footer-btn {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Let the main content grow to fill space, pushing footer down */
+main, .cart-page-container, .contact-container,.trackorder-container {
+  flex: 1;
+}
+
+/* Footer styling to ensure it stays at the base */
+footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Apply this to the main wrapper of your App */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* This pushes the footer to the bottom */
+footer {
+    margin-top: auto;
+    background-color: #222; /* Matches your dark footer */
+    color: #fff;
+    padding: 40px 0 20px 0;
+}
